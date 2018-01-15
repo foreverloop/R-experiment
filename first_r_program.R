@@ -32,6 +32,7 @@ x = c(1,2,3,4,5)
 y = c(5,4,3,2,1)
 z = x + y
 z
+
 #getting elements out
 x[1]
 y[2] #result will be 4
