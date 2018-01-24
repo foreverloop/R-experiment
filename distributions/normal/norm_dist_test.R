@@ -1,4 +1,5 @@
 #Histograms, Normal Distributions, scaling data to 0 mean and 1 sd, Z scores
+#24/01/2018 - added +1 and -1 markers for standard deviation
 df <- read.table(file.choose(),header=TRUE,sep=',')
 attach(df)
 names(df)
@@ -29,6 +30,14 @@ plot(LungCap,
      main='Lung Capacity Normal Distribution',
      xlab='Lung Capacity',
      ylab='Frequency Occuring')
+
+stdv_min_1 <- mean(LungCap) - sd(LungCap)
+stdv_plus_1 <- mean(LungCap) + sd(LungCap)
+
+#+1 and -1 standard deviations on normal distirbution
+abline(a=NULL,b=NULL,v=mean(LungCap),col='red')
+abline(a=NULL,b=NULL,v=stdv_min_1,col='blue')
+abline(a=NULL,b=NULL,v=stdv_plus_1,col='blue')
 
 #inefficient but nice continuous line, not quite a normal dist
 plot(density(LungCap),main='Lung Capacity Distribution',
